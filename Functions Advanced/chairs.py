@@ -1,3 +1,12 @@
+# with combination
+# from itertools import combinations
+#
+# names = input().split(", ")
+# n = int(input())
+# print(*[f"{', '.join(el)}" for el in list(combinations(names, n))], sep="\n")
+
+# with recursion
+
 def calc_combinations(names, n, combs=[]):
     if len(combs) == n:
         print(", ".join(combs))
