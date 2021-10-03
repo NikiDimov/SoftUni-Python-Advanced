@@ -9,3 +9,4 @@ for i in range(0, n, 2):
             if el in symbols:
                 current_line[k] = current_line[k].replace(el, '@')
     print(' '.join(current_line[::-1]))
+file.close()
