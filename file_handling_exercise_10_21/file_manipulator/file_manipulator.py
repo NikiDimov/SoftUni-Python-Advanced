@@ -15,13 +15,11 @@ while not command == 'End':
     elif action == "Replace":
         old_string, new_string = data[2], data[3]
         try:
-            file_text = open(file_name, 'r')
-            file_text = file_text.readlines()
-            for i in range(len(file_text)):
-                if old_string in file_text[i]:
-                    file_text[i] = file_text[i].replace(old_string, new_string)
+            with open(file_name, 'r') as file:
+                content = file.read()
             with open(file_name, 'w') as file:
-                file.write(''.join(file_text))
+                content = content.replace(old_string, new_string)
+                file.write(content)
         except FileNotFoundError:
             print("An error occurred")
     elif action == "Delete":
